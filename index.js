@@ -6,6 +6,14 @@ let texts = [
   "MacBook Air",
   "ASUS VivoBook",
 ];
+let taglines = [
+  "Power Meets Performance",
+  "Smart Choice for Everyday Use",
+  "Built for Speed & Reliability",
+  "Premium Design, Ultimate Power",
+  "Lightweight. Powerful. Perfect.",
+  "Performance Without Limits",
+];
 
 let images = [
   "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wc3xlbnwwfHwwfHx8MA%3D%3D",
@@ -45,11 +53,38 @@ function changeBackground() {
     `url(${images[currentIndex]})`;
 
   document.getElementById("title").innerText = texts[currentIndex];
-  title.classList.remove("animate__animated", "animate__fadeInUp");
+  document.getElementById("para").innerText = taglines[currentIndex];
+
+  title.classList.remove(
+    "animate__animated",
+    "animate__fadeInUp",
+    "animate__slow",
+    "animate__delay-0.5s",
+  );
 
   void title.offsetWidth;
 
-  title.classList.add("animate__animated", "animate__fadeInUp");
+  title.classList.add(
+    "animate__animated",
+    "animate__fadeInUp",
+    "animate__slow",
+    "animate__delay-0.5s",
+  );
+  para.classList.remove(
+    "animate__animated",
+    "animate__fadeInLeftBig",
+    "animate__slow",
+    "animate__delay-0.5s",
+  );
+
+  void para.offsetWidth;
+
+  para.classList.add(
+    "animate__animated",
+    "animate__fadeInLeftBig",
+    "animate__slow",
+    "animate__delay-0.5s",
+  );
 }
 
 window.onload = function () {
